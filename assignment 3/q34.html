@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Change Paragraph</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+            padding-top: 80px;
+            background: #f2f2f2;
+        }
+
+        .box {
+            background: white;
+            width: 450px;
+            margin: auto;
+            padding: 30px;
+            border-radius: 10px;
+        }
+
+        p {
+            font-size: 20px;
+        }
+
+        button {
+            padding: 10px 25px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="box">
+
+    <h1>Change Paragraph</h1>
+
+    <p id="para">This is the original paragraph.</p>
+
+    <button onclick="changeParagraph()">Change Text</button>
+
+</div>
+
+<script>
+function changeParagraph() {
+
+    document.getElementById("para").innerHTML =
+        "The paragraph text has been changed!";
+}
+</script>
+
+</body>
+</html>

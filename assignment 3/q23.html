@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Password Validation</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+            padding-top: 70px;
+            background: #f2f2f2;
+        }
+
+        .box {
+            background: white;
+            width: 450px;
+            margin: auto;
+            padding: 30px;
+            border-radius: 10px;
+        }
+
+        input {
+            padding: 10px;
+            width: 250px;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin-top: 15px;
+        }
+
+        #result {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="box">
+
+    <h1>Password Validation</h1>
+
+    <p>Minimum 8 characters, uppercase, lowercase and digit</p>
+
+    <input type="password" id="password" placeholder="Enter Password">
+
+    <br>
+
+    <button onclick="validatePassword()">Validate</button>
+
+    <p id="result"></p>
+
+</div>
+
+<script>
+function validatePassword() {
+
+    let password = document.getElementById("password").value;
+
+    let pattern = /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d).{8,}$/;
+
+    if (pattern.test(password)) {
+        document.getElementById("result").innerHTML =
+            "✓ Valid Password";
+    } else {
+        document.getElementById("result").innerHTML =
+            "✗ Invalid Password";
+    }
+}
+</script>
+
+</body>
+</html>

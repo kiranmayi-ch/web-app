@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h2>Rectangle</h2>
+<p id="output"></p>
+
+<script>
+let length = 10;
+let breadth = 5;
+
+function area(l, b) {
+    return l * b;
+}
+
+function perimeter(l, b) {
+    return 2 * (l + b);
+}
+
+document.getElementById("output").innerHTML =
+    "Area: " + area(length, breadth) + "<br>" +
+    "Perimeter: " + perimeter(length, breadth);
+</script>
+
+</body>
+</html>

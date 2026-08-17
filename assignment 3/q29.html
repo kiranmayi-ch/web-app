@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Form Validation</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background: #f2f2f2;
+            text-align: center;
+            padding-top: 40px;
+        }
+
+        .box {
+            background: white;
+            width: 450px;
+            margin: auto;
+            padding: 30px;
+            border-radius: 10px;
+        }
+
+        input {
+            display: block;
+            width: 280px;
+            padding: 10px;
+            margin: 10px auto;
+        }
+
+        button {
+            padding: 10px 30px;
+        }
+
+        #result {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="box">
+
+    <h1>Form Validation</h1>
+
+    <input type="text" id="name" placeholder="Name">
+    <input type="text" id="email" placeholder="Email">
+    <input type="text" id="mobile" placeholder="Mobile">
+    <input type="text" id="pin" placeholder="6-digit PIN">
+
+    <button onclick="validateForm()">Validate</button>
+
+    <p id="result"></p>
+
+</div>
+
+<script>
+function validateForm() {
+
+    let name = document.getElementById("name").value;
+    let email = document.getElementById("email").value;
+    let mobile = document.getElementById("mobile").value;
+    let pin = document.getElementById("pin").value;
+
+    if (!/^[A-Za-z ]+$/.test(name)) {
+        result.innerHTML = "Invalid Name";
+    }
+    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        result.innerHTML = "Invalid Email";
+    }
+    else if (!/^[0-9]{10}$/.test(mobile)) {
+        result.innerHTML = "Invalid Mobile Number";
+    }
+    else if (!/^[0-9]{6}$/.test(pin)) {
+        result.innerHTML = "Invalid PIN Code";
+    }
+    else {
+        result.innerHTML = "✓ All details are valid";
+    }
+}
+</script>
+
+</body>
+</html>

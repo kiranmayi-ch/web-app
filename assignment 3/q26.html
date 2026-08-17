@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registration Form</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background: #f2f2f2;
+            text-align: center;
+            padding-top: 40px;
+        }
+
+        .box {
+            background: white;
+            width: 450px;
+            margin: auto;
+            padding: 30px;
+            border-radius: 10px;
+        }
+
+        input {
+            display: block;
+            width: 300px;
+            padding: 10px;
+            margin: 10px auto;
+        }
+
+        button {
+            padding: 10px 30px;
+        }
+
+        #result {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="box">
+
+    <h1>Registration Form</h1>
+
+    <input type="text" id="name" placeholder="Name">
+    <input type="text" id="email" placeholder="Email">
+    <input type="text" id="mobile" placeholder="Mobile Number">
+    <input type="password" id="password" placeholder="Password">
+
+    <button onclick="register()">Register</button>
+
+    <p id="result"></p>
+
+</div>
+
+<script>
+function register() {
+
+    let name = document.getElementById("name").value;
+    let email = document.getElementById("email").value;
+    let mobile = document.getElementById("mobile").value;
+    let password = document.getElementById("password").value;
+
+    let namePattern = /^[A-Za-z ]+$/;
+    let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    let mobilePattern = /^[0-9]{10}$/;
+    let passwordPattern = /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d).{8,}$/;
+
+    if (!namePattern.test(name)) {
+        result.innerHTML = "Invalid Name";
+    }
+    else if (!emailPattern.test(email)) {
+        result.innerHTML = "Invalid Email";
+    }
+    else if (!mobilePattern.test(mobile)) {
+        result.innerHTML = "Invalid Mobile Number";
+    }
+    else if (!passwordPattern.test(password)) {
+        result.innerHTML = "Invalid Password";
+    }
+    else {
+        result.innerHTML = "✓ Registration Successful";
+    }
+}
+</script>
+
+</body>
+</html>

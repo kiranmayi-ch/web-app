@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Strong Password</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+            padding-top: 70px;
+            background: #f2f2f2;
+        }
+
+        .box {
+            background: white;
+            width: 450px;
+            margin: auto;
+            padding: 30px;
+            border-radius: 10px;
+        }
+
+        input {
+            padding: 10px;
+            width: 250px;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="box">
+
+    <h1>Strong Password</h1>
+
+    <p>8 characters, uppercase, lowercase, digit and special character</p>
+
+    <input type="password" id="password" placeholder="Enter Password">
+
+    <br>
+
+    <button onclick="checkPassword()">Check</button>
+
+    <p id="result"></p>
+
+</div>
+
+<script>
+function checkPassword() {
+
+    let password = document.getElementById("password").value;
+
+    let pattern =
+        /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[@$!%*?&]).{8,}$/;
+
+    if (pattern.test(password)) {
+        result.innerHTML = "✓ Strong Password";
+    } else {
+        result.innerHTML = "✗ Weak Password";
+    }
+}
+</script>
+
+</body>
+</html>

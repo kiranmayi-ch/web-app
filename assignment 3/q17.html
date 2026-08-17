@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Information</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background: #f2f2f2;
+            text-align: center;
+            padding-top: 60px;
+        }
+
+        .box {
+            background: white;
+            width: 400px;
+            margin: auto;
+            padding: 30px;
+            border-radius: 10px;
+        }
+
+        input {
+            padding: 10px;
+            margin: 8px;
+            width: 250px;
+        }
+
+        button {
+            padding: 10px 25px;
+        }
+
+        #output {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="box">
+
+    <h1>User Information</h1>
+
+    <input type="text" id="name" placeholder="Enter Name">
+    <br>
+
+    <input type="email" id="email" placeholder="Enter Email">
+    <br>
+
+    <input type="text" id="mobile" placeholder="Enter Mobile">
+    <br>
+
+    <button onclick="displayInfo()">Submit</button>
+
+    <div id="output"></div>
+
+</div>
+
+<script>
+function displayInfo() {
+
+    let name = document.getElementById("name").value;
+    let email = document.getElementById("email").value;
+    let mobile = document.getElementById("mobile").value;
+
+    document.getElementById("output").innerHTML =
+        "Name: " + name + "<br>" +
+        "Email: " + email + "<br>" +
+        "Mobile: " + mobile;
+}
+</script>
+
+</body>
+</html>

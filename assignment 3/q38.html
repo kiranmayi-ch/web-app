@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Submit Event</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background: #f2f2f2;
+            text-align: center;
+            padding-top: 60px;
+        }
+
+        .box {
+            background: white;
+            width: 450px;
+            margin: auto;
+            padding: 30px;
+            border-radius: 10px;
+        }
+
+        input {
+            display: block;
+            width: 280px;
+            padding: 10px;
+            margin: 10px auto;
+        }
+
+        button {
+            padding: 10px 30px;
+        }
+
+        #result {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="box">
+
+    <h1>User Form</h1>
+
+    <form id="myForm">
+
+        <input type="text" id="name" placeholder="Name">
+
+        <input type="email" id="email" placeholder="Email">
+
+        <button type="submit">Submit</button>
+
+    </form>
+
+    <div id="result"></div>
+
+</div>
+
+<script>
+document.getElementById("myForm").addEventListener(
+    "submit",
+    function(event) {
+
+        event.preventDefault();
+
+        let name = document.getElementById("name").value;
+        let email = document.getElementById("email").value;
+
+        document.getElementById("result").innerHTML =
+            "<b>Name:</b> " + name + "<br>" +
+            "<b>Email:</b> " + email;
+    }
+);
+</script>
+
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Keydown Event</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+            padding-top: 80px;
+            background: #f2f2f2;
+        }
+
+        .box {
+            background: white;
+            width: 450px;
+            margin: auto;
+            padding: 30px;
+            border-radius: 10px;
+        }
+
+        input {
+            padding: 12px;
+            width: 250px;
+        }
+
+        #result {
+            font-size: 20px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="box">
+
+    <h1>Keydown Event</h1>
+
+    <input type="text"
+           placeholder="Press any key"
+           onkeydown="showKey(event)">
+
+    <p id="result">Press a key...</p>
+
+</div>
+
+<script>
+function showKey(event) {
+
+    document.getElementById("result").innerHTML =
+        "You pressed: " + event.key;
+}
+</script>
+
+</body>
+</html>

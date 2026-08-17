@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Even and Odd Numbers</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+            padding-top: 60px;
+            background: #f2f2f2;
+        }
+
+        .box {
+            background: white;
+            width: 500px;
+            margin: auto;
+            padding: 30px;
+            border-radius: 10px;
+        }
+
+        input {
+            padding: 10px;
+            width: 100px;
+            margin: 5px;
+        }
+
+        button {
+            padding: 10px 20px;
+        }
+
+        #output {
+            margin-top: 20px;
+            line-height: 2;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="box">
+
+    <h1>Even and Odd Numbers</h1>
+
+    <input type="number" id="start" placeholder="Start">
+    <input type="number" id="end" placeholder="End">
+
+    <br>
+
+    <button onclick="displayNumbers()">Display</button>
+
+    <div id="output"></div>
+
+</div>
+
+<script>
+function displayNumbers() {
+
+    let start = Number(document.getElementById("start").value);
+    let end = Number(document.getElementById("end").value);
+
+    let even = "";
+    let odd = "";
+
+    for (let i = start; i <= end; i++) {
+
+        if (i % 2 == 0) {
+            even += i + " ";
+        } else {
+            odd += i + " ";
+        }
+    }
+
+    document.getElementById("output").innerHTML =
+        "<b>Even Numbers:</b> " + even + "<br>" +
+        "<b>Odd Numbers:</b> " + odd;
+}
+</script>
+
+</body>
+</html>

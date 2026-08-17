@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mouse Enter Leave</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+            padding-top: 70px;
+        }
+
+        #box {
+            width: 400px;
+            height: 200px;
+            border: 3px solid black;
+            margin: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: lightgray;
+        }
+    </style>
+</head>
+
+<body>
+
+<h1>Mouse Enter and Leave</h1>
+
+<div id="box"
+     onmouseenter="mouseEnter()"
+     onmouseleave="mouseLeave()">
+
+    Move mouse here
+
+</div>
+
+<script>
+function mouseEnter() {
+
+    document.getElementById("box").style.backgroundColor =
+        "lightblue";
+}
+
+function mouseLeave() {
+
+    document.getElementById("box").style.backgroundColor =
+        "lightgray";
+}
+</script>
+
+</body>
+</html>

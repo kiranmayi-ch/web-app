@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Image Gallery</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+            background: #f2f2f2;
+            padding-top: 50px;
+        }
+
+        .gallery {
+            background: white;
+            width: 500px;
+            margin: auto;
+            padding: 30px;
+            border-radius: 10px;
+        }
+
+        img {
+            width: 400px;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        button {
+            padding: 10px 25px;
+            margin: 15px 5px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="gallery">
+
+    <h1>Image Gallery</h1>
+
+    <img id="image"
+         src="https://picsum.photos/id/1015/400/250">
+
+    <br>
+
+    <button onclick="previousImage()">Previous</button>
+
+    <button onclick="nextImage()">Next</button>
+
+</div>
+
+<script>
+let images = [
+    "https://picsum.photos/id/1015/400/250",
+    "https://picsum.photos/id/1016/400/250",
+    "https://picsum.photos/id/1018/400/250"
+];
+
+let index = 0;
+
+function nextImage() {
+
+    index++;
+
+    if (index >= images.length) {
+        index = 0;
+    }
+
+    document.getElementById("image").src = images[index];
+}
+
+function previousImage() {
+
+    index--;
+
+    if (index < 0) {
+        index = images.length - 1;
+    }
+
+    document.getElementById("image").src = images[index];
+}
+</script>
+
+</body>
+</html>

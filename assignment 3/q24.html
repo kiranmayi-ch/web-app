@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Alphabet Validation</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+            padding-top: 80px;
+            background: #f2f2f2;
+        }
+
+        .box {
+            background: white;
+            width: 400px;
+            margin: auto;
+            padding: 30px;
+            border-radius: 10px;
+        }
+
+        input {
+            padding: 10px;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="box">
+
+    <h1>Alphabet Checker</h1>
+
+    <input type="text" id="text" placeholder="Enter text">
+
+    <br>
+
+    <button onclick="checkText()">Check</button>
+
+    <p id="result"></p>
+
+</div>
+
+<script>
+function checkText() {
+
+    let text = document.getElementById("text").value;
+
+    let pattern = /^[A-Za-z]+$/;
+
+    if (pattern.test(text)) {
+        document.getElementById("result").innerHTML =
+            "✓ Contains only alphabets";
+    } else {
+        document.getElementById("result").innerHTML =
+            "✗ Contains other characters";
+    }
+}
+</script>
+
+</body>
+</html>

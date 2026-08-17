@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sum of Natural Numbers</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background-color: #f2f2f2;
+            text-align: center;
+            padding-top: 80px;
+        }
+
+        .box {
+            background: white;
+            width: 400px;
+            margin: auto;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px gray;
+        }
+
+        input {
+            padding: 10px;
+            width: 150px;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin-top: 15px;
+        }
+
+        #result {
+            margin-top: 20px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="box">
+
+    <h1>Sum of Natural Numbers</h1>
+
+    <input type="number" id="num" placeholder="Enter N">
+
+    <br>
+
+    <button onclick="calculateSum()">Calculate Sum</button>
+
+    <div id="result"></div>
+
+</div>
+
+<script>
+
+function calculateSum() {
+
+    let n = Number(document.getElementById("num").value);
+
+    let sum = 0;
+
+    for (let i = 1; i <= n; i++) {
+        sum = sum + i;
+    }
+
+    document.getElementById("result").innerHTML =
+        "Sum of first " + n +
+        " natural numbers = " + sum;
+}
+
+</script>
+
+</body>
+</html>

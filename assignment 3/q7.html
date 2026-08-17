@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Factorial</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background-color: #f2f2f2;
+            text-align: center;
+            padding-top: 80px;
+        }
+
+        .box {
+            background: white;
+            width: 350px;
+            margin: auto;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px gray;
+        }
+
+        input {
+            padding: 10px;
+            width: 150px;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin-top: 15px;
+        }
+
+        #result {
+            margin-top: 20px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="box">
+
+    <h1>Factorial Calculator</h1>
+
+    <input type="number" id="num" placeholder="Enter number">
+
+    <br>
+
+    <button onclick="calculateFactorial()">
+        Calculate Factorial
+    </button>
+
+    <div id="result"></div>
+
+</div>
+
+<script>
+
+function calculateFactorial() {
+
+    let n = Number(document.getElementById("num").value);
+
+    let factorial = 1;
+
+    for (let i = 1; i <= n; i++) {
+        factorial = factorial * i;
+    }
+
+    document.getElementById("result").innerHTML =
+        "Factorial of " + n + " = " + factorial;
+}
+
+</script>
+
+</body>
+</html>

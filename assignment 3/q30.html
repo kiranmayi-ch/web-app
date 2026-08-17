@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Validation</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background: #f2f2f2;
+            text-align: center;
+            padding-top: 50px;
+        }
+
+        .box {
+            background: white;
+            width: 450px;
+            margin: auto;
+            padding: 30px;
+            border-radius: 10px;
+        }
+
+        input {
+            display: block;
+            width: 280px;
+            padding: 10px;
+            margin: 10px auto;
+        }
+
+        button {
+            padding: 10px 30px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="box">
+
+    <h1>Input Validation</h1>
+
+    <input type="text" id="email" placeholder="Email">
+    <input type="text" id="mobile" placeholder="Mobile Number">
+    <input type="password" id="password" placeholder="Password">
+
+    <button onclick="validate()">Validate</button>
+
+    <p id="result"></p>
+
+</div>
+
+<script>
+function validate() {
+
+    let email = document.getElementById("email").value;
+    let mobile = document.getElementById("mobile").value;
+    let password = document.getElementById("password").value;
+
+    let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    let mobilePattern = /^[0-9]{10}$/;
+    let passwordPattern = /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d).{8,}$/;
+
+    if (!emailPattern.test(email)) {
+        result.innerHTML = "✗ Invalid Email";
+    }
+    else if (!mobilePattern.test(mobile)) {
+        result.innerHTML = "✗ Invalid Mobile Number";
+    }
+    else if (!passwordPattern.test(password)) {
+        result.innerHTML = "✗ Invalid Password";
+    }
+    else {
+        result.innerHTML = "✓ All inputs are valid";
+    }
+}
+</script>
+
+</body>
+</html>

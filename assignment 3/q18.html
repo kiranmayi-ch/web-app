@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Counter</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+            padding-top: 80px;
+            background: #f2f2f2;
+        }
+
+        .box {
+            background: white;
+            width: 400px;
+            margin: auto;
+            padding: 30px;
+            border-radius: 10px;
+        }
+
+        #count {
+            font-size: 50px;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin: 5px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="box">
+
+    <h1>Counter</h1>
+
+    <div id="count">0</div>
+
+    <button onclick="increment()">Increment</button>
+    <button onclick="decrement()">Decrement</button>
+    <button onclick="reset()">Reset</button>
+
+</div>
+
+<script>
+let count = 0;
+
+function increment() {
+    count++;
+    document.getElementById("count").innerHTML = count;
+}
+
+function decrement() {
+    count--;
+    document.getElementById("count").innerHTML = count;
+}
+
+function reset() {
+    count = 0;
+    document.getElementById("count").innerHTML = count;
+}
+</script>
+
+</body>
+</html>
